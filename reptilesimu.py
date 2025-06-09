@@ -71,24 +71,22 @@ class Food:
     def draw(self, surface):
         pulse_size = self.size + math.sin(self.pulse) * 3
 
-        # Enhanced food colors and effects
         if self.type == 'normal':
-            # Gradient red apple-like appearance
+      
             color = (220, 50, 50)
             highlight = (255, 100, 100)
         elif self.type == 'super':
-            # Golden fruit with shimmer
+           
             color = (255, 215, 0)
             highlight = (255, 255, 150)
         elif self.type == 'power':
-            # Purple mystical fruit
+         
             color = (138, 43, 226)
             highlight = (200, 100, 255)
 
-        # Main food body
+       
         pygame.draw.circle(surface, color, (int(self.x), int(self.y)), int(pulse_size))
 
-        # Highlight for 3D effect
         highlight_pos = (int(self.x - pulse_size * 0.3), int(self.y - pulse_size * 0.3))
         pygame.draw.circle(surface, highlight, highlight_pos, int(pulse_size * 0.4))
 
